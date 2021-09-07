@@ -19,3 +19,9 @@ code {
   --text-font: 'Roboto Condensed', sans-serif;
   --yellow-color:rgb(220, 220, 0)
 }
+
+
+h1,h2,h3,h4,p {
+  margin:0;
+  padding: 0;
+}

@@ -1,0 +1,59 @@
+.bannerLeft {
+    width: 45%;
+    border-right: 1px solid black;
+    background-color: rgb(23, 22, 22);
+    padding-top: 130px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.bannerLeft__title {
+   font-family: var(--title-font);
+  text-align: center;
+}
+
+.bannerLeft__title>h2 {
+    background-color: black;
+    width: 10%;
+    margin: 0px auto;
+    color: white;
+    font-size: 35px;
+   
+    
+    
+}
+.bannerLeft__title>h1{
+    background-color: var(--yellow-color);
+    width: 25%;
+    margin: 0px auto;
+    margin-top: -20px;
+    font-size: 35px;
+    margin-bottom: 30px;
+
+}
+
+.bannerLeft__imgContainer {
+    margin-right: 7px;
+    height: 300px;
+}
+.bannerLeft__movieRow {
+    padding: 10px 0px;
+   
+    display: flex;
+   overflow: auto;
+    
+   
+}
+
+::-webkit-scrollbar{
+    visibility: hidden;
+}
+::-webkit-scrollbar-thumb{
+    background: grey;
+    border-radius: 10px;
+    width: 30px;
+    
+    
+}
