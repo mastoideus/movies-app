@@ -1,0 +1,83 @@
+.modalFilter {
+    background-color: rgb(72, 72, 72);
+    width: 25%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 13px;
+    z-index: 200;
+    transition: all 0.6s ease-in;
+    opacity: 0;
+    box-sizing: border-box;
+    padding: 60px;
+    font-family: var(--title-font);
+    position: sticky;
+    left: 0px;
+    bottom:0px;
+    
+   
+    visibility: hidden;
+    
+    
+
+    
+}
+
+
+.modalFilter__open {
+    opacity: 1;
+    visibility: visible;
+   
+    
+}
+
+.modalFilter__sortdiv h1 {
+   border-left: 3px solid var(--yellow-color);
+   
+}
+
+.modalFilter__sortdiv ul {
+    list-style: none;
+}
+.modalFilter__sortdiv ul li {
+    border-bottom: 2px solid yellow;
+    width: 120px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.modalFilter__sortdiv li button, .modalFilter__filterdiv li button{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    font-size: 20px;
+    font-family: var(--title-font);
+    cursor: pointer;
+    
+}
+
+
+.modalFilter__filterdiv h1 {
+   border-left: 3px solid black;
+   color: var(--yellow-color);
+   
+   
+}
+
+.modalFilter__filterdiv ul {
+    list-style: none;
+}
+.modalFilter__filterdiv ul li {
+    border-bottom: 2px solid black;
+    width: 120px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--yellow-color);
+}
+
+.modalFilter__sortdiv ul li button:hover {
+    color: var(--yellow-color);
+}
+
+.modalFilter__ascDesc button:nth-last-child(3):hover {
+  color: black;
+}

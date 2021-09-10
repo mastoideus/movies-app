@@ -1,11 +1,12 @@
 import React from 'react'
-import './Home.css'
 import Banner from './Banner/Banner'
+import TvComponent from './TvComponent/TvComponent'
 
 
 const Home=props=>{
-    return <div className='home'>
+    return <div>
        <Banner/>
+       <TvComponent/>
     </div>
 }
 

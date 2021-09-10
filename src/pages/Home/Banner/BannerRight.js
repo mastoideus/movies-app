@@ -11,8 +11,8 @@ const BannerRight=(props)=>{
 
      useEffect(()=>{
         const fetchData= async()=>{
-            const response= await axios.get(requests.fetchTopRated)
-            console.log(response)
+            const response= await axios.get(requests.fetchTVMovies)
+            
             setTopMovies(response.data.results)
         }
 
