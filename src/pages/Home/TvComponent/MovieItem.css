@@ -5,7 +5,8 @@
     margin-bottom: 50px ;
     border: 2px solid rgb(41, 2, 2);
     box-shadow:  0px 5px 5px 20px rgb(50, 1, 1);
-    background-color: rgb(12, 12, 12)
+    background-color: rgb(12, 12, 12);
+    position: relative;
 }
 
 .movieItem img {
@@ -20,8 +21,23 @@
     margin: 10px;
     overflow: hidden;
     height: 70%;
+   
     
 }
+.movieItem__fav {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    color:var(--yellow-color);
+    font-size: 33px;
+    z-index: 50;
+    cursor: pointer;
+}
+.color {
+    color: grey;
+}
+
+
 
 .movieItem img:hover {
    transform: scale(1.1);

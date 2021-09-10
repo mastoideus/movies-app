@@ -8,6 +8,7 @@ import axios from '../../../axios'
 import MovieItem from './MovieItem'
 import MovieModal from './MovieModal'
 import GenreModal from './GenreModal'
+import { useGlobalContext } from '../../../context'
 
 
 const TvComponent=(props)=>{
@@ -18,8 +19,9 @@ const TvComponent=(props)=>{
   const [genreModal, setGenreModal]=useState(false)
   const [allMovies, setAllMovies]=useState([])
   
-  
-  
+  const {favItems}= useGlobalContext()
+
+  console.log(favItems)
    // fetching movies data 
 
     useEffect(()=>{

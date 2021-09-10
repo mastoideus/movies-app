@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {FavProvider} from './context'
 
 ReactDOM.render(
   <React.StrictMode>
+  <FavProvider>
     <App />
+  </FavProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
