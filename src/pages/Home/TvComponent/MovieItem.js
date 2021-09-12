@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './MovieItem.css'
 import {imageURL} from '../../../requests'
 import {MdStars} from 'react-icons/md'
@@ -11,11 +11,15 @@ const MovieItem=({backdrop, genreIDs,overview,title,rating,poster,id,release,onO
   const [favColor, setFavColor]=useState(true)
   const {favMovieAdd, favMovieRemove}=useGlobalContext()
 
-      const onAddOrRemoveFav=()=>{
+      
+  
+  
+  
+  const onAddOrRemoveFav=()=>{
         setFavColor(prevState=>!prevState)
 
         if(favColor){
-          favMovieAdd({id, title, rating, release, poster})
+          favMovieAdd({id, title, rating, release, poster,backdrop})
         } else if (!favColor){
           favMovieRemove(id)
         }

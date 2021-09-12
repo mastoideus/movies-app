@@ -19,7 +19,7 @@ const TvComponent=(props)=>{
   const [genreModal, setGenreModal]=useState(false)
   const [allMovies, setAllMovies]=useState([])
   
-  const {favItems}= useGlobalContext()
+  const {favItems, term}= useGlobalContext()
 
   console.log(favItems)
    // fetching movies data 
@@ -33,6 +33,8 @@ const TvComponent=(props)=>{
 
         fetchData()
     },[])
+
+  
     
     
     // filter-modal and movie-modal functionality (retrieving id movie info on open movie modal) //
@@ -62,6 +64,7 @@ const TvComponent=(props)=>{
     }
     const closeGenreModalHandler=()=>{
       setGenreModal(false)
+      setModalFilter(false)
     }
 
     //sorting by title and date functions 
@@ -72,7 +75,7 @@ const TvComponent=(props)=>{
       copyMovieData.sort((movie1,movie2)=> movie1.title.split(' ')[0].localeCompare(movie2.title.split(' ')[0]))
       
       setMovieData(copyMovieData)
-      setModalFilter(false)
+      
       
     }
 
@@ -105,11 +108,29 @@ const TvComponent=(props)=>{
      }
      
     }
+     
+    // filtering movies by date function 
+    
+    const dateButtonHandler=(value1,value2)=>{
+        const copyAllMovies=[...allMovies]
 
+        const filteredDateArray= copyAllMovies.filter(movie=>{
+          return movie.release_date >= value1 && movie.release_date <= value2
+        })
+
+        setMovieData(filteredDateArray)
+    }
     
     
+   
     
-    const moviesList=movieData.map(movie=>{
+    const moviesList=movieData.filter(movie=>{
+      if(term===''){
+        return movie
+      } else if (movie.title.split(' ')[0].toLowerCase().includes(term.toLowerCase())){
+        return movie
+      }
+    }).map(movie=>{
       return <MovieItem
         backdrop={movie.backdrop_path}
         genreIDs={movie.genre_ids}
@@ -143,7 +164,7 @@ const TvComponent=(props)=>{
         <div className='tv__movieList'>
          {moviesList}
         </div>
-        <ModalFilter modalFilter={modalFilter} sortByTitle={sortByTitleHandler} sortByDate={sortByDateHandler} onCloseModal={closeModalHandler} onGenreModalOpen={genreModalHandler}/>
+        <ModalFilter modalFilter={modalFilter} sortByTitle={sortByTitleHandler} sortByDate={sortByDateHandler} onCloseModal={closeModalHandler} onGenreModalOpen={genreModalHandler}onDateButton={dateButtonHandler}/>
       </div>
       
       

@@ -4,7 +4,14 @@ import Home from './pages/Home/Home'
 import Favorite from './pages/Favorite/Favorite'
 import Navigation from './sharedComponents/Navigation/Navigation'
 
+
 function App() {
+  
+  
+  
+   
+  
+  
   return (
     <Router>
       <Navigation/>

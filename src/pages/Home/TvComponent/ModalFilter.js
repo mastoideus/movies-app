@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 import './ModalFilter.css'
 
 
-const ModalFilter=({modalFilter, sortByTitle, sortByDate, onCloseModal, onGenreModalOpen})=>{
+const ModalFilter=({modalFilter, sortByTitle, sortByDate, onCloseModal, onGenreModalOpen, onDateButton})=>{
+    const [value1, setValue1]=useState('')
+    const [value2, setValue2]=useState('')
+
+    useEffect(()=>{
+        onDateButton(value1,value2)
+    },[value1, value2])
+    
+       
+  
+    
     return (
-        <div className={`modalFilter ${modalFilter && 'modalFilter__open'}` } onClick={onCloseModal}>
+        <div className={`modalFilter ${modalFilter && 'modalFilter__open'}` } >
             <div className='modalFilter__sortdiv'>
                <h1>SORT BY</h1>
                <ul>
@@ -21,7 +31,14 @@ const ModalFilter=({modalFilter, sortByTitle, sortByDate, onCloseModal, onGenreM
                <h1>FILTER BY</h1>
                <ul>
                <li><button onClick={onGenreModalOpen}>GENRE</button></li>
-               <li><button>RELEASE DATE</button></li>
+               <li className='modalFilter__dateFilter'><button>RELEASE DATE</button>
+                
+                 <div className='modalFilter__fromTo'>
+                 <small>from-to</small> 
+                 <input value={value1} onChange={(e)=>setValue1(e.target.value)} type='date'/>
+                 <input value={value2} onChange={(e)=>setValue2(e.target.value)} type='date'/>
+                 </div>
+               </li>
                </ul>
             </div>
             

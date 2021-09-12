@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from 'react'
+import {createContext, useContext, useState,useEffect} from 'react'
 
 
 const FavContext= createContext()
@@ -6,16 +6,36 @@ const FavContext= createContext()
 
 export const FavProvider=(props)=>{
    
-    const [favItems, setFavItems]=useState([])
-
+    const [favItems, setFavItems]=useState(JSON.parse(localStorage.getItem('favorites')))
+    const [term, setTerm]=useState('')
+    
+    const onTransportData=(data)=>{
+        setTerm(data)
+    }
+   
+    
+    
+    
+    useEffect(()=>{
+           localStorage.setItem('favorites', JSON.stringify(favItems))
+    
+   },[favItems])
+    
+    
+    
     const favMovieAdd=(item)=>{
-       
-            const copyFavItems=[...favItems, item]
-
-          
-           setFavItems(copyFavItems)
+            let copyFavItems=[...favItems]
+            const existingItem= copyFavItems.find(movie=>movie.id===item.id)
+            if (existingItem){
+                return
+            } else {
+               copyFavItems=[...favItems, item]
+               setFavItems(copyFavItems)
+            }
+            
      
     }
+    
     const favMovieRemove=(id)=>{
         const copyFavItems2=[...favItems]
         
@@ -26,7 +46,7 @@ export const FavProvider=(props)=>{
         setFavItems(removedList)
     }
     
-    return <FavContext.Provider value={{favMovieAdd, favMovieRemove, favItems}}>
+    return <FavContext.Provider value={{favMovieAdd, favMovieRemove, favItems, onTransportData, term}}>
          {props.children}
     </FavContext.Provider>
 }
