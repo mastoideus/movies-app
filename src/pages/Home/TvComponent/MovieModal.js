@@ -1,28 +1,31 @@
-import React from 'react'
-import './MovieModal.css'
-import { imageURL } from '../../../requests'
-import {MdStars} from 'react-icons/md'
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from 'react';
+import './MovieModal.css';
+import { MdStars } from 'react-icons/md';
+import { imageURL } from '../../../requests';
 
+const MovieModal = ({ showMovieModal, onCloseMovieModal, movie }) => (
+  <div className={`movieModal ${showMovieModal && 'movieModalOpen'}`} onClick={onCloseMovieModal}>
+    <div className="movieModal__left">
+      <h1>{movie.title}</h1>
+      <div className="imageDiv">
+        <img src={`${imageURL}${'/w200'}${movie.poster_path}`} alt="" />
+      </div>
+      <span className="movieModal__vote">
+        <MdStars style={{ color: 'black' }} />
+        {movie.vote_average}
+      </span>
+    </div>
+    <div className="movieModal__right">
+      <h2>OVERVIEW</h2>
+      <p>{movie.overview}</p>
+      <h4>
+        Release Date:
+        {movie.release_date}
+      </h4>
+    </div>
 
-const MovieModal=({showMovieModal, onCloseMovieModal, movie})=>{
-    return (
-        <div className={`movieModal ${showMovieModal && 'movieModalOpen'}`} onClick={onCloseMovieModal}>
-           <div className='movieModal__left'>
-              <h1>{movie.title}</h1>
-              <div className='imageDiv'>
-              <img src={`${imageURL}${'/w200'}${movie.poster_path}`} alt=''/>
-              </div>
-              <span className='movieModal__vote'><MdStars style={{color:'black'}}/>{movie.vote_average}</span>
-           </div>
-           <div className='movieModal__right'>
-             <h2>OVERVIEW</h2>
-             <p>{movie.overview}</p>
-             <h4>Release Date: {movie.release_date}</h4>
-           </div>
-          
-        </div>
-    )
-}
+  </div>
+);
 
-
-export default MovieModal
+export default MovieModal;

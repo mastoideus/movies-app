@@ -1,14 +1,12 @@
-import React from 'react'
-import Banner from './Banner/Banner'
-import TvComponent from './TvComponent/TvComponent'
+import React from 'react';
+import Banner from './Banner/Banner';
+import TvComponent from './TvComponent/TvComponent';
 
+const Home = () => (
+  <div>
+    <Banner />
+    <TvComponent />
+  </div>
+);
 
-const Home=props=>{
-    return <div>
-       <Banner/>
-       <TvComponent/>
-    </div>
-}
-
-
-export default Home
+export default Home;

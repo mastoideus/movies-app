@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {FavProvider} from './context'
+import { FavProvider } from './context';
 
 ReactDOM.render(
   <React.StrictMode>
-  <FavProvider>
-    <App />
-  </FavProvider>
+    <FavProvider>
+      <App />
+    </FavProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
