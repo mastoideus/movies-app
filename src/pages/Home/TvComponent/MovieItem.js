@@ -9,17 +9,16 @@ import { useGlobalContext } from '../../../context';
 const MovieItem = ({
   backdrop, title, rating, poster, id, release, onOpenMovieModal,
 }) => {
-  const [favColor, setFavColor] = useState(true);
+  const [favColor, setFavColor] = useState(false);
   const { favMovieAdd, favMovieRemove } = useGlobalContext();
 
   const onAddOrRemoveFav = () => {
     setFavColor((prevState) => !prevState);
-
-    if (favColor) {
+    if (!favColor) {
       favMovieAdd({
         id, title, rating, release, poster, backdrop,
       });
-    } else if (!favColor) {
+    } else {
       favMovieRemove(id);
     }
   };

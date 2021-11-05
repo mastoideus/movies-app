@@ -2,13 +2,11 @@
 import React from 'react';
 import './Favorite.css';
 import FavoriteItem from './FavoriteItem';
+import { useGlobalContext } from '../../context';
 
 const Favorite = () => {
-  const results = localStorage.getItem('favorites');
-
-  const favMovies = JSON.parse(results);
-
-  const favMoviesList = favMovies.map((movie) => <FavoriteItem key={movie.id} title={movie.title} rating={movie.rating} backdrop={movie.backdrop} />);
+  const { favItems } = useGlobalContext();
+  const favMoviesList = favItems.map((movie) => <FavoriteItem key={movie.id} title={movie.title} rating={movie.rating} backdrop={movie.backdrop} />);
 
   return (
     <div className="favorites">

@@ -16,3 +16,11 @@
     color: var(--yellow-color);
     cursor: pointer;
 }
+
+@media(max-width:735px){
+    .banner {
+        flex-direction: column;
+        height: 1100px;
+        
+    }
+}

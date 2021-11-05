@@ -54,3 +54,32 @@
     
     
 }
+
+
+@media(max-width:1265px){
+    .bannerRight__movieContainer{
+        width: 50%;
+    }
+}
+
+@media(max-width:933px){
+    .bannerRight__movieContainer{
+        width: 60%;
+    }
+    .bannerRight__titleR>h1 {
+        width: 20%;
+    }
+    .bannerRight__titleR>h2 {
+        width: 10%;
+    }
+}
+
+@media(max-width:735px){
+    .bannerRight{
+        width: 100%;
+        padding-bottom: 100px;
+    }
+    .bannerRight__imgContainer img{
+       width: 80%;
+    }
+}

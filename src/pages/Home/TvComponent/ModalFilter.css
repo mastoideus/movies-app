@@ -89,3 +89,52 @@
 
 
 
+@media(max-width:1262px){
+    .modalFilter {
+        width: 30%;
+    }
+}
+@media(max-width:846px){
+    .modalFilter {
+        width: 40%;
+    }
+}
+@media(max-width:577px){
+    .modalFilter{
+        width: 69%;
+        position: sticky;
+        
+        top: 0;
+        left: 0;
+        
+    }
+    .modalFilter__sortdiv>h1 {
+        font-size: 18px;
+    }
+    .modalFilter__filterdiv>h1{
+        font-size: 18px;
+    }
+    .modalFilter__sortdiv ul li {
+       
+        width: 120px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .modalFilter__sortdiv li button, .modalFilter__filterdiv li button{
+        background-color: transparent;
+        outline: none;
+        border:none;
+        font-size: 13px;
+        font-family: var(--title-font);
+        cursor: pointer;
+        
+    }
+   
+}
+
+@media(max-width:372px){
+    .modalFilter {
+        width: 76%;
+    }
+}

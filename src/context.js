@@ -1,22 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-useless-return */
 import {
-  createContext, useContext, useState, useEffect,
+  createContext, useContext, useState,
 } from 'react';
 
 const FavContext = createContext();
 
 export const FavProvider = (props) => {
-  const [favItems, setFavItems] = useState(JSON.parse(localStorage.getItem('favorites')));
+  const [favItems, setFavItems] = useState([]);
   const [term, setTerm] = useState('');
 
   const onTransportData = (data) => {
     setTerm(data);
   };
-
-  useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favItems));
-  }, [favItems]);
 
   const favMovieAdd = (item) => {
     let copyFavItems = [...favItems];

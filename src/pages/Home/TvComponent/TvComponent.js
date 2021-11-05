@@ -132,14 +132,13 @@ const TvComponent = () => {
 
   return (
     <div className="tv" id="tv">
-      <MovieModal
-        showMovieModal={movieModal}
-        onCloseMovieModal={closeMovieModalHandler}
-        movie={modalMovieInfo}
-      />
       <GenreModal genreModal={genreModal} onCloseGenreModal={closeGenreModalHandler} onChangeGenre={changeGenreHandler} />
-
       <div className="tv__inner">
+        <MovieModal
+          showMovieModal={movieModal}
+          onCloseMovieModal={closeMovieModalHandler}
+          movie={modalMovieInfo}
+        />
         <div className="tv__movieList">
           {moviesList}
         </div>

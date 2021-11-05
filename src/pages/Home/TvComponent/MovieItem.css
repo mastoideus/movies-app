@@ -1,6 +1,6 @@
 
 .movieItem {
-    width: 210px;
+    width: 230px;
     height: 310px;
     margin-bottom: 50px ;
     border: 2px solid rgb(41, 2, 2);
@@ -28,13 +28,13 @@
     position: absolute;
     right: 0px;
     top: 2px;
-    color:var(--yellow-color);
+    color: grey;
     font-size: 33px;
     z-index: 50;
     cursor: pointer;
 }
 .color {
-    color: grey;
+    color:var(--yellow-color);
 }
 
 
@@ -58,3 +58,27 @@
     margin-left: 10px;
     
 }
+
+
+@media(max-width:570px){
+    .movieItem {
+        width: 45%;
+        height: 265px;
+    }
+    .movieItem__fav {
+        font-size: 20px;
+    }
+    .movieItem__rating{
+        margin-top: -10px;
+        width: 35px;
+    }
+}
+
+@media(max-width:412px){
+    .movieItem{
+        width: 60%;
+        margin: auto;
+    }
+}
+
+

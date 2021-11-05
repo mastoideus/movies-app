@@ -1,21 +1,23 @@
 .movieModal {
-     width: 90%;
-    height: 72%;
+     width: 100%;
+    height: 100%;
     background-color:rgba(235, 235, 6);
-    margin-left: 5%;
+   
     border-radius: 50%;
     border: 3px solid black;
-    position: absolute;
+    position: sticky;
     z-index: 300;
-    visibility: hidden;
+  
     opacity: 0;
     transform: scale(0);
     transition: all 0.4s ease-out;
     font-family: var(--text-font);
-   
+    left: 0px;
+    top: 0px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    display: none;
 
 
 }
@@ -23,11 +25,12 @@
 .movieModalOpen {
     opacity: 1;
     transform: scale(1);
-    visibility: visible;
+    
      border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    display: flex;
 }
 
 
@@ -80,4 +83,78 @@
     padding: 10px;
     width: 50%;
     margin: 0px auto;
+}
+
+
+@media(max-width:762px){
+    .movieModal__right{
+        padding: 50px;
+    }
+}
+
+@media(max-width:690px){
+    .movieModal__right{
+        padding: 15px;
+        text-align: center;
+    }
+    .movieModal__vote {
+        font-size: 30px;
+    }
+    .movieModal {
+        flex-direction: column;
+    }
+    .imageDiv {
+        height: 100px;
+        width: 24%;
+    }
+    .imageDiv img {
+        height: 100%;
+    }
+    .movieModal__right>h2{
+        font-size: 20px;
+    }
+    .movieModal__right>p{
+        font-size: 15px;
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media(max-width:577px){
+    .movieModal__right{
+        padding: 10px;
+        text-align: center;
+    }
+    .movieModal__vote {
+        font-size: 20px;
+    }
+    .movieModal {
+        flex-direction: column;
+    }
+    .imageDiv {
+        height: 80px;
+        width: 26%;
+    }
+    .imageDiv img {
+        height: 100%;
+    }
+    .movieModal__right>h2{
+        font-size: 18px;
+    }
+    .movieModal__right>p{
+        font-size: 13px;
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .movieModal__left>h1{
+        font-size: 23px;
+    }
+    .movieModal__right>h2{
+        margin-bottom: 10px;
+    }
+    .movieModal__right>h4{
+        font-size: 13px;
+    }
 }
